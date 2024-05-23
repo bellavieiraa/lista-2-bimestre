@@ -82,82 +82,70 @@ WHERE Editora = 'Penguin Books';
 
 #7
 
-UPDATE Livros
-SET Título = 'Harry Potter e a Pedra Filosofal (Edição Especial)'
-WHERE ISBN = '978-0439708180';
+UPDATE Livros 
+SET titulo = 'Harry Potter e a Pedra Filosofal (Edição Especial)'
+WHERE isbn =  '978-0439708180';
 
 #8
 
-DELETE FROM Livros
-WHERE Categoria = 'Terror';
+DELETE FROM Livros WHERE categoria = 'Terror';
 
 #9
 
-DELETE FROM Livros
-WHERE Idioma = 'Francês' AND Ano_Publicação < 1970;
+DELETE FROM Livros WHERE idioma and ano_publicacao = 'Francês' < '1970';
 
 #10
 
-DELETE FROM Livros
-WHERE Título = 'As Crônicas de Nárnia';
+DELETE FROM Livros WHERE titulo = 'As cronicas de Narnia';
 
 #11
-
-DELETE FROM Livros
-WHERE Editora = 'Penguin Books';
+  
+DELETE FROM Livros WHERE editora = 'Penguin Books';
 
 #12
 
-SELECT * FROM Livros WHERE Número_Páginas > 500;
+SELECT * FROM Livros
+WHERE quantidade_paginas > '500';
 
 #13
-
-SELECT Categoria, COUNT(*) AS Quantidade
-FROM Livros
-GROUP BY Categoria;
+ 
+SELECT categoria, count(*) AS quantidade_paginas 
+FROM Livros 
+GROUP BY categoria;
 
 #14
 
-SELECT * FROM Livros LIMIT 5;
+SELECT* 
+FROM Livros
+LIMIT 5;
 
 #15
 
-SELECT SUM(Número_Páginas) AS Total_Páginas, AVG(Número_Páginas) AS Média_Páginas
+SELECT sum(quantidade_paginas), avg(quantidade_paginas)
 FROM Livros
-WHERE Categoria = 'Drama';
-
-#16
-
-SELECT AVG(Ano_Publicação) AS Média_Ano_Publicação
-FROM Livros
-WHERE Disponibilidade = TRUE;
+WHERE categoria ='Drama';
 
 #17
 
-SELECT MAX(Ano_Publicação) AS Livro_Mais_Recente, MIN(Ano_Publicação) AS Livro_Mais_Antigo
+SELECT MAX(ano_publicacao), MIN(ano_publicacao)
 FROM Livros;
 
 #18
 
-SELECT * FROM Livros ORDER BY Ano_Publicação DESC;
+SELECT*
+FROM Livros
+ORDER BY ano_publicacao DESC;
 
 #19
 
-SELECT titulo FROM Livros WHERE Idioma = 'Inglês'
+(SELECT titulo FROM Livros WHERE idioma = 'Inglês')
 UNION
-(SELECT titulo FROM Livros WHERE Idioma = 'Português');
+(SELECT titulo FROM Livros WHERE idioma = 'Português');
 
 #20
-
-SELECT * FROM Livros WHERE Autor = 'George Orwell';
-
-
-
-
-
-
-
-
+  
+SELECT * FROM Livros 
+WHERE autor = 'J.K. Rowling';
 
 
 
